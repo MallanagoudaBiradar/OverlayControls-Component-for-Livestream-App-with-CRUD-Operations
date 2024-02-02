@@ -1,0 +1,242 @@
+[{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458d4"
+  },
+  "from": "from",
+  "flask": "flask_pymongo",
+  "import": "import",
+  "Flask,": "PyMongo"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458d5"
+  }
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458d6"
+  },
+  "from": "app",
+  "flask": "=",
+  "import": "Flask(__name__)"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458d7"
+  },
+  "from": "app.config['MONGO_URI']",
+  "flask": "=",
+  "import": "'mongodb://localhost:27017/dataBase'"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458d8"
+  },
+  "from": "mongo",
+  "flask": "=",
+  "import": "PyMongo(app)"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458d9"
+  }
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458da"
+  },
+  "from": "#",
+  "flask": "CRUD",
+  "import": "Endpoints",
+  "Flask,": "for",
+  "jsonify,": "Overlays"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458db"
+  },
+  "from": "#",
+  "flask": "Create"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458dc"
+  },
+  "from": "@app.route('/overlay/create',",
+  "flask": "methods=['POST'])"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458dd"
+  },
+  "from": "def",
+  "flask": "create_overlay():"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458de"
+  },
+  "jsonify,": "data",
+  "request": "="
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458df"
+  },
+  "jsonify,": "mongo.db.overlays.insert_one(data)"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458e0"
+  },
+  "jsonify,": "return",
+  "request": "jsonify({'message':"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458e1"
+  }
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458e2"
+  },
+  "from": "#",
+  "flask": "Read"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458e3"
+  },
+  "from": "@app.route('/overlay/read',",
+  "flask": "methods=['GET'])"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458e4"
+  },
+  "from": "def",
+  "flask": "read_overlays():"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458e5"
+  },
+  "jsonify,": "overlays",
+  "request": "="
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458e6"
+  },
+  "jsonify,": "return",
+  "request": "jsonify({'overlays':"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458e7"
+  }
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458e8"
+  },
+  "from": "#",
+  "flask": "Update"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458e9"
+  },
+  "from": "@app.route('/overlay/update/<overlay_id>',",
+  "flask": "methods=['PUT'])"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458ea"
+  },
+  "from": "def",
+  "flask": "update_overlay(overlay_id):"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458eb"
+  },
+  "jsonify,": "data",
+  "request": "="
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458ec"
+  },
+  "jsonify,": "mongo.db.overlays.update_one({'_id':",
+  "request": "overlay_id},"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458ed"
+  },
+  "jsonify,": "return",
+  "request": "jsonify({'message':"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458ee"
+  }
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458ef"
+  },
+  "from": "#",
+  "flask": "Delete"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458f0"
+  },
+  "from": "@app.route('/overlay/delete/<overlay_id>',",
+  "flask": "methods=['DELETE'])"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458f1"
+  },
+  "from": "def",
+  "flask": "delete_overlay(overlay_id):"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458f2"
+  },
+  "jsonify,": "mongo.db.overlays.delete_one({'_id':",
+  "request": "overlay_id})"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458f3"
+  },
+  "jsonify,": "return",
+  "request": "jsonify({'message':"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458f4"
+  }
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458f5"
+  },
+  "from": "if",
+  "flask": "__name__",
+  "import": "==",
+  "Flask,": "'__main__':"
+},
+{
+  "_id": {
+    "$oid": "65bce5ac8d04f1f3592458f6"
+  },
+  "jsonify,": "app.run(debug=True,",
+  "request": "port=5001)"
+}]
